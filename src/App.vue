@@ -18,6 +18,7 @@
         <div>このダイアログを閉じます。</div>
       </template>
     </my-dialog>
+
   </div>
 </template>
 
