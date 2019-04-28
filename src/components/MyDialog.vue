@@ -19,10 +19,10 @@ import { Component, Vue, Emit } from 'vue-property-decorator'
 
 @Component
 export default class App extends Vue {
-  private beforeFocusElement: Element | null = null
+  private beforeFocusElement: HTMLElement | null = null
 
   mounted() {
-    this.beforeFocusElement = document.activeElement
+    this.beforeFocusElement = document.activeElement as HTMLElement
     if (this.$refs.dialog instanceof HTMLElement) {
       this.$refs.dialog.focus()
     }
@@ -32,7 +32,7 @@ export default class App extends Vue {
     this.close()
   }
   @Emit()
-  close() {
+  close(): HTMLElement | null {
     return this.beforeFocusElement
   }
 
@@ -40,7 +40,7 @@ export default class App extends Vue {
     this.ok()
   }
   @Emit()
-  ok() {
+  ok(): HTMLElement | null {
     return this.beforeFocusElement
   }
 }

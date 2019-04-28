@@ -34,16 +34,16 @@ import MyDialog from './components/MyDialog.vue';
 export default class App extends Vue {
   public isDialogShown = false
 
-  handleClose(elm: Element | null) {
+  handleClose(elm: HTMLElement | null) {
     this.isDialogShown = false
-    if (elm instanceof HTMLElement) {
+    if (elm !== null) {
       elm.focus()
     }
   }
 
-  handleOk(elm: Element | null) {
+  handleOk(elm: HTMLElement | null) {
     this.isDialogShown = false
-    if (elm instanceof HTMLElement) {
+    if (elm !== null) {
       elm.focus()
     }
   }
