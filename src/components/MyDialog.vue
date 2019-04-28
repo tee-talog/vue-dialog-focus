@@ -1,6 +1,6 @@
 <template>
   <div class="my-dialog-wrapper" @click.prevent="handleClose">
-    <div class="dialog-container" role="dialog" tabindex="-1" ref="dialog">
+    <div class="dialog-container" role="dialog" tabindex="-1" ref="dialog" @click.stop>
       <div class="dialog-header">
         <slot name="header"></slot>
       </div>
